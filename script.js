@@ -68,19 +68,25 @@ form.addEventListener("submit", function(event) {
     // Calculate average coding time.
     let averageTime = total / codingMinutes.length;
     document.getElementById("average-time").textContent = `${averageTime.toFixed(2)} Minutes`;
-    // Find the most productive day.
-    let highestTime = 0, numberDayHighestTime = 0;
-    for (let time of codingMinutes) {
-        if (time > highestTime){
-            highestTime = time;
+
+    // Find the most productive day
+    let highestTime = 0;
+    let numberDayHighestTime = 0;
+
+    for (let i = 0; i < codingMinutes.length; i++) {
+        if (codingMinutes[i] > highestTime) {
+            highestTime = codingMinutes[i];
+            numberDayHighestTime = i + 1;
         }
     }
 
-    for (let day of codingMinutes) {
-        numberDayHighestTime++;
-        if (day == highestTime) {
-            break;
-        }
+    const bestDay = document.getElementById("best-day");
+
+    if (highestTime === 0) {
+        bestDay.textContent = "No coding activity";
+    } else {
+        bestDay.textContent =
+            `Day ${numberDayHighestTime} (${highestTime} minutes)`;
     }
 
     document.getElementById("best-day").textContent = `Day ${numberDayHighestTime}`;
