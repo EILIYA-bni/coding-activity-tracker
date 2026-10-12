@@ -123,3 +123,102 @@ button.secondary {
 [hidden] {
   display: none !important;
 }
+
+
+.activity-dashboard {
+    background: #101828;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.activity-dashboard h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Activity Heatmap */
+
+.activity-heatmap {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.heatmap-day {
+    height: 45px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    transition: transform 0.2s;
+}
+
+.heatmap-day:hover {
+    transform: scale(1.08);
+}
+
+/* Activity Bar Chart */
+
+.chart-scroll {
+    overflow-x: auto;
+}
+
+.activity-chart {
+    display: grid;
+    grid-template-columns: repeat(14, minmax(20px, 1fr));
+    gap: 8px;
+    height: 230px;
+    min-width: 500px;
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 8px;
+}
+
+.chart-track {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid #475569;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    transition: height 0.4s ease, opacity 0.2s;
+}
+
+.chart-bar:hover {
+    opacity: 0.7;
+}
+
+.chart-label {
+    color: #aab4c4;
+    font-size: 11px;
+}
+
+/* Activity Colors */
+
+.inactive {
+    background: #29374a;
+    color: white;
+}
+
+.active {
+    background: #568548;
+    color: white;
+}
+
+.goal {
+    background: #a3e635;
+    color: #101828;
+}
