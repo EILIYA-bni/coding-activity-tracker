@@ -11,6 +11,64 @@
         <script type="text/javascript" src="script.js" defer></script>
     </head>
     <body>
-        
+          <main class="container">
+    <header>
+      <h1>Coding Activity Tracker</h1>
+      <p>Analyze your last 14 days of programming.</p>
+    </header>
+
+    <form id="tracker-form" novalidate>
+      <h2>Enter Your Coding Time</h2>
+      <p>Enter minutes for each day. Use 0 for inactive days.</p>
+
+      <div id="day-inputs" class="day-grid"></div>
+
+      <div class="actions">
+        <button type="submit">Generate Report</button>
+        <button type="reset" class="secondary">Clear</button>
+      </div>
+
+      <p id="error" role="alert"></p>
+    </form>
+
+    <section id="results" hidden>
+      <h2>Your Performance Report</h2>
+
+      <div class="stats">
+        <article>
+          <h3>Total Coding Time</h3>
+          <p id="total-time">--</p>
+        </article>
+
+        <article>
+          <h3>Daily Average</h3>
+          <p id="average-time">--</p>
+        </article>
+
+        <article>
+          <h3>Most Productive Day</h3>
+          <p id="best-day">--</p>
+        </article>
+
+        <article>
+          <h3>Active / Inactive Days</h3>
+          <p id="active-days">--</p>
+        </article>
+
+        <article>
+          <h3>Longest Coding Streak</h3>
+          <p id="longest-streak">--</p>
+        </article>
+
+        <article>
+          <h3>Daily Goal Achieved</h3>
+          <p id="goals-met">--</p>
+        </article>
+      </div>
+
+      <h2>Activity Chart</h2>
+      <pre id="activity-chart"></pre>
+    </section>
+  </main>
     </body>
 </html>
